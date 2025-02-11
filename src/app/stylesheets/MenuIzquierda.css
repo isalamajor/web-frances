@@ -1,0 +1,20 @@
+.menu-izquierda {
+    background-color: #CD5C5C;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 2rem 10%;
+}
+
+
+.menu-link {
+    text-decoration: none;
+    color: white;
+}
+
+.img-perfil {
+    border-radius: 50%;
+}

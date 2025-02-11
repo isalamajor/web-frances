@@ -1,0 +1,37 @@
+/* Asegúrate de que los elementos estén alineados y con espacio entre ellos */
+.material {
+    padding: 1rem 2rem;
+    max-width: 100%;
+    background-color: #f4f4f4;
+}
+ 
+.label-material {
+    font-size: 1.5rem;
+}
+.recursos-lista {
+    display: flex;
+    flex-direction: wrap;
+    gap: 20px;
+}
+  
+  .recurso-item {
+    text-align: center; 
+    width: 15rem;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .recurso-imagen {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Redondea las esquinas de la imagen */
+  }
+  
+  .recurso-nombre {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+  

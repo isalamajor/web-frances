@@ -1,0 +1,40 @@
+.page {
+  min-height: 100svh;
+  font-family: var(--font-lexend);
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1.25fr 6.75fr 2fr; /* 2/10 - 6/10 - 2/10 */
+}
+
+
+
+/* Columna central (la que "flota") */
+.center {
+  padding-top: 2rem;
+  position: relative;  /* Necesario para aplicar la sombra correctamente */
+  z-index: 2;  /* Coloca la columna central sobre las demás */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Columna izquierda y derecha */
+.left, .right {
+  background-color: #e0e0e0;
+  box-shadow: none; /* Sin sombra para las columnas laterales */
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .titulo {
+    color: #B22222;
+  }
+}
+
+.materiales {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
