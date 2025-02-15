@@ -1,5 +1,6 @@
 .menu-derecha {
     background-color: #B22222;
+    color:white;
     text-align: center;
     text-decoration: none;
     margin: 0;
@@ -18,9 +19,18 @@
 
 .menu-link {
     text-decoration: none;
-    color: white;
 }
 
 .img-perfil {
     border-radius: 50%;
+    padding-top: 1rem;
+    transition: transform 0.3s ease;
+    object-fit: cover;
 }
+
+.img-perfil:hover {
+    transform: scale(1.2);
+    z-index: 1;
+}
+
+

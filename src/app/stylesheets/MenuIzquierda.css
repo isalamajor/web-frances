@@ -1,5 +1,4 @@
 .menu-izquierda {
-    background-color: #CD5C5C;
     text-align: center;
     text-decoration: none;
     display: flex;
@@ -7,6 +6,13 @@
     align-items: center;
     margin: 0;
     padding: 2rem 10%;
+}
+
+.menu-izquierda-all {
+    background-color: #CD5C5C;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 
@@ -17,4 +23,24 @@
 
 .img-perfil {
     border-radius: 50%;
+}
+
+.logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.img-perfil {
+    border-radius: 50%;
+    padding-top: 1rem;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+.img-perfil:hover {
+    transform: scale(1.2);
+    z-index: 1;
 }

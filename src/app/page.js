@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import MenuIzquierda from "./components/MenuIzquierda";
 import MenuDerecha from "./components/MenuDerecha";
 import Material from "./components/Material";
+import lista_documentos from "./components/lista_documentos";
 
 // Importamos Lexend desde Google Fonts
 const lexend = Lexend({
@@ -25,6 +26,16 @@ const recursos = [
   {
     id: 3,
     nombre: "Recurso 3",
+    imagen: "/archivo.png", 
+  },
+  {
+    id: 4,
+    nombre: "Recurso 4",
+    imagen: "/archivo.png", 
+  },
+  {
+    id: 5,
+    nombre: "Recurso 5",
     imagen: "/archivo.png", 
   },
 ];
@@ -51,13 +62,13 @@ const recursosB1 = [
 export default function Home() {
   return (
     <div className={styles.page}>
-      <main className={`${styles.main} ${lexend.variable}`}> {/* Aplicamos Lexend aquí */}
+      <main className={`${styles.main} ${lexend.variable}`}> 
         <MenuIzquierda className={styles.left}></MenuIzquierda>
         <div className={styles.center}>
           <h1 className={styles.titulo}>Apprends chez Daniel</h1>
           <div className={styles.materiales}>
-            <Material label="Nuevo" recursos={recursos}/>
-            <Material label="Nivel B1" recursos={recursosB1}/>
+            <Material label="Nuevo" recursos={lista_documentos}/>
+            <Material label="Nivel B1" recursos={lista_documentos}/>
           </div>
         </div>
         <MenuDerecha className={styles.right}></MenuDerecha>

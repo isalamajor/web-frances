@@ -1,6 +1,30 @@
-const Gramatica = () => {
-    return <h1 className="text-2xl">Página de Gramática</h1>;
-  };
-  
-  export default Gramatica;
-  
+import Image from "next/image";
+import { Lexend } from "next/font/google";  // Importar Lexend
+import styles from "../page.module.css";
+import MenuIzquierda from "../components/MenuIzquierda";
+import MenuDerecha from "../components/MenuDerecha";
+import Material from "../components/Material";
+
+const lexend = Lexend({
+  variable: "--font-lexend",
+  subsets: ["latin"],
+});
+
+const recursos = [];
+
+export default function Home() {
+  return (
+    <div className={styles.page}>
+      <main className={`${styles.main} ${lexend.variable}`}> 
+        <MenuIzquierda className={styles.left}></MenuIzquierda>
+        <div className={styles.center}>
+          <h1 className={styles.titulo}>Grammaire</h1>
+          <div className={styles.materiales}>
+            <Material label="Nuevo" recursos={recursos}/>
+          </div>
+        </div>
+        <MenuDerecha className={styles.right}></MenuDerecha>
+      </main>
+    </div>
+  );
+}

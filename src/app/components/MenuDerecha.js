@@ -7,7 +7,7 @@ const MenuDerecha = () => {
     <div className="menu-derecha">
         <nav className="pricipal-derecha">
             {/* Imagen del logo */}
-            <Image src="/me.jpg" alt="Logo" width={120} height={120} className="img-perfil" />
+            <Image src="/profile.webp" alt="Logo" width={120} height={120} className="img-perfil" />
             <h2>Isabel Hernandez</h2>
         </nav>
     <div className="recomendaciones">
