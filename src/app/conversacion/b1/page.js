@@ -1,12 +1,12 @@
-const categoria = "gramatica";
+const categoria = "conversacion-b1";
 
 import Image from "next/image";
 import { Lexend } from "next/font/google";  // Importar Lexend
-import styles from "../page.module.css";
-import MenuIzquierda from "../components/MenuIzquierda";
-import MenuDerecha from "../components/MenuDerecha";
-import Material from "../components/Material";
-import lista_documentos from "../components/lista_documentos";
+import styles from "../../page.module.css";
+import MenuIzquierda from "../../components/MenuIzquierda";
+import MenuDerecha from "../../components/MenuDerecha";
+import Material from "../../components/Material";
+import lista_documentos from "../../components/lista_documentos";
 
 const lexend = Lexend({
   variable: "--font-lexend",
@@ -21,7 +21,7 @@ export default function Home() {
       <main className={`${styles.main} ${lexend.variable}`}> 
         <MenuIzquierda className={styles.left}></MenuIzquierda>
         <div className={styles.center}>
-          <h1 className={styles.titulo}>Grammaire</h1>
+          <h1 className={styles.titulo}>Conversation B1</h1>
           <div className={styles.materiales}>
             <Material label="Nuevo" recursos={recursos}/>
           </div>

@@ -1,20 +1,22 @@
 .menu-derecha {
     background-color: #B22222;
-    color:white;
-    text-align: center;
-    text-decoration: none;
-    margin: 0;
-    padding: 2rem 10%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+
+    color:white;
+    text-decoration: none;
+    
+    min-height: 100vh;
+
 }
 
 .principal-derecha {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 2rem 3rem;
 }
 
 .menu-link {
@@ -29,8 +31,23 @@
 }
 
 .img-perfil:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     z-index: 1;
 }
 
+.recomendaciones {
+    padding: 2rem 3rem;
+
+    h3 {
+        color: rgba(255, 255, 255, 0.908);
+    }
+
+    a {
+        text-decoration: none;
+        color: rgb(255, 252, 158);
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
 

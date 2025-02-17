@@ -1,4 +1,4 @@
-const categoria = "gramatica";
+const categoria = "consejos";
 
 import Image from "next/image";
 import { Lexend } from "next/font/google";  // Importar Lexend
@@ -21,7 +21,7 @@ export default function Home() {
       <main className={`${styles.main} ${lexend.variable}`}> 
         <MenuIzquierda className={styles.left}></MenuIzquierda>
         <div className={styles.center}>
-          <h1 className={styles.titulo}>Grammaire</h1>
+          <h1 className={styles.titulo}>Conseils</h1>
           <div className={styles.materiales}>
             <Material label="Nuevo" recursos={recursos}/>
           </div>

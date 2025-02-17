@@ -3,7 +3,7 @@ import { Lexend } from "next/font/google";  // Importar Lexend
 import styles from "./page.module.css";
 import MenuIzquierda from "./components/MenuIzquierda";
 import MenuDerecha from "./components/MenuDerecha";
-import Material from "./components/Material";
+import MaterialMuestra from "./components/MaterialMuestra";
 import lista_documentos from "./components/lista_documentos";
 
 // Importamos Lexend desde Google Fonts
@@ -12,54 +12,14 @@ const lexend = Lexend({
   subsets: ["latin"],
 });
 
-const recursos = [
-  {
-    id: 1,
-    nombre: "Recurso 1",
-    imagen: "/archivo.png", 
-  },
-  {
-    id: 2,
-    nombre: "Recurso 2",
-    imagen: "/archivo.png", 
-  },
-  {
-    id: 3,
-    nombre: "Recurso 3",
-    imagen: "/archivo.png", 
-  },
-  {
-    id: 4,
-    nombre: "Recurso 4",
-    imagen: "/archivo.png", 
-  },
-  {
-    id: 5,
-    nombre: "Recurso 5",
-    imagen: "/archivo.png", 
-  },
-];
-
-const recursosB1 = [
-  {
-    id: 1,
-    nombre: "Recurso b1 A",
-    imagen: "/archivo.png", 
-  },
-  {
-    id: 2,
-    nombre: "Recurso b1 B",
-    imagen: "/archivo.png", 
-  },
-  {
-    id: 3,
-    nombre: "Recurso b1 C",
-    imagen: "/archivo.png", 
-  },
-];
 
 
 export default function Home() {
+
+  const recursos_b1 = lista_documentos.filter(doc => doc.categoria == "conversacion-b1");
+  const recursos_a2 = lista_documentos.filter(doc => doc.categoria == "conversacion-a2");
+  const recursos_consejos = lista_documentos.filter(doc => doc.categoria == "consejos");
+
   return (
     <div className={styles.page}>
       <main className={`${styles.main} ${lexend.variable}`}> 
@@ -67,8 +27,10 @@ export default function Home() {
         <div className={styles.center}>
           <h1 className={styles.titulo}>Apprends chez Daniel</h1>
           <div className={styles.materiales}>
-            <Material label="Nuevo" recursos={lista_documentos}/>
-            <Material label="Nivel B1" recursos={lista_documentos}/>
+            <MaterialMuestra label="Ejercicios de Conversación Nivel A2" recursos={recursos_a2} carpeta="conversacion/a2"/>
+            <MaterialMuestra label="Ejercicios de Conversación Nivel B1" recursos={recursos_b1} carpeta="conversacion/b1"/>
+            <MaterialMuestra label="¿Por dónde empezar?" recursos={recursos_consejos} carpeta="consejos"/>
+            <p></p>
           </div>
         </div>
         <MenuDerecha className={styles.right}></MenuDerecha>
