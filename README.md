@@ -1,4 +1,5 @@
-Web Application deployed in Vercel, draft of a site for My french teacher to have a website to upload his material:) 
+🇫🇷 🥐 Web Application deployed in Vercel, draft of a site for My french teacher to have a website to upload his material:) 
+
 Link: https://web-frances.vercel.app/
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
