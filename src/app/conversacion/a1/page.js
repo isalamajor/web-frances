@@ -1,7 +1,9 @@
+"use client";
+
 const categoria = "conversacion-a1";
 
 import Image from "next/image";
-import { Lexend } from "next/font/google";  // Importar Lexend
+import { Lexend } from "next/font/google"; 
 import styles from "../../page.module.css";
 import MenuIzquierda from "../../components/MenuIzquierda";
 import MenuDerecha from "../../components/MenuDerecha";

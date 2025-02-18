@@ -30,7 +30,7 @@ const MenuIzquierda = () => {
           animate={{ height: openConversation ? "auto" : 0, opacity: openConversation ? 1 : 0 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className="submenu"
-          style={{ overflow: "hidden" }} // Evita que afecte los otros enlaces
+          style={{ overflow: "hidden" }} 
         >
           <Link href="/conversacion/a1" className="menu-link">A1</Link>
           <Link href="/conversacion/a2" className="menu-link">A2</Link>
@@ -40,7 +40,7 @@ const MenuIzquierda = () => {
       </nav>
 
       <div className="logo">
-        <Link href="/">
+        <Link href="/" className="ref-logo">
           <Image src="/logo.png" alt="Logo" width={120} height={120} className="img-logo" />
         </Link>
       </div>

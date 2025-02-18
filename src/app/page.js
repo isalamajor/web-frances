@@ -1,18 +1,16 @@
+"use client";
 import Image from "next/image";
-import { Lexend } from "next/font/google";  // Importar Lexend
+import { Lexend } from "next/font/google";
 import styles from "./page.module.css";
 import MenuIzquierda from "./components/MenuIzquierda";
 import MenuDerecha from "./components/MenuDerecha";
 import MaterialMuestra from "./components/MaterialMuestra";
 import lista_documentos from "./components/lista_documentos";
 
-// Importamos Lexend desde Google Fonts
 const lexend = Lexend({
   variable: "--font-lexend",
   subsets: ["latin"],
 });
-
-
 
 export default function Home() {
 

@@ -1,3 +1,5 @@
+"use client";
+
 export default function Recomendaciones() {
     return (
         <div className="space-y-2">

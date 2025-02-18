@@ -7,9 +7,8 @@
 
     color:white;
     text-decoration: none;
-    
     min-height: 100vh;
-
+    height: min(100vh, max-content);
 }
 
 .principal-derecha {
@@ -55,3 +54,10 @@
     }
 }
 
+
+/* 📱 Diseño en móviles */
+@media (max-width: 768px) {
+    .menu-derecha {
+        min-height: auto;
+    }
+  }

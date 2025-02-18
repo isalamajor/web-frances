@@ -8,14 +8,14 @@
 
 .recursos-lista {
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea */
+    flex-wrap: wrap; 
     gap: 1rem;
     justify-content: left;
     
     height: 10rem;
 }
-  
-  .recurso-item {
+
+.recurso-item {
     text-align: center; 
     width: 5rem;
     background-color: #fff;
@@ -28,32 +28,44 @@
     min-width: 200px; 
 
     max-height: 100%;
-  }
+}
 
-  .recurso-item:hover {
+.recurso-item:hover {
     transform: scale(1.1);
     z-index: 1;
-  }
-  
-  .recurso-imagen {
+}
+
+.recurso-imagen {
     max-width: 100%;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-  }
-  
-  .recurso-nombre {
+}
+
+.recurso-nombre {
     font-size: 14px;
     color: #333;
     text-decoration: none;
     padding-bottom: 1rem;
-  }
-  
-  .see-more-container {
+}
+
+.see-more-container {
     color: #333;
     background-color: rgb(240, 240, 240);
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-  }
+}
  
+
+/* 📱 Diseño en móviles */
+@media (max-width: 768px) {
+    .recursos-lista {
+        height: auto;
+        justify-content: center;
+    }
+
+    .label-material {        
+        justify-content: center;
+    }
+  }

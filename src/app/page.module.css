@@ -1,37 +1,48 @@
 .page {
-  font-family: var(--font-lexend);
-  min-height: 100vh;
+    font-family: var(--font-lexend);
+    min-height: 100vh;
 }
 
 .main {
-  display: grid;
-  grid-template-columns: 1.25fr 6.75fr 2fr; /* menuizq-centro-menuder */
-  
+    display: grid;
+    grid-template-columns: 1.25fr 6.75fr 2fr; 
 }
-
 
 .center {
-  padding-top: 2rem;
-  position: relative;  /* Necesario para aplicar la sombra correctamente */
-  z-index: 2;  /* Coloca la columna central sobre las demás */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .titulo {
-    color: #B22222;
-  }
+    padding-top: 2rem;
+    position: relative;  /* Para aplicar la sombra del bloque central */
+    z-index: 2;  /* Coloca la columna central sobre las demás */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: max(max-content, 100vh);
 }
-
 
 .left, .right {
   background-color: #e0e0e0;
   box-shadow: none; 
 }
 
-
 .materiales {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
+}
+
+.titulo {
+  padding: 1rem 2rem;
+  color: #B22222;
+}
+
+
+/* 📱 Diseño en móviles */
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .center {
+    padding: 0 1rem;
+  }
 }

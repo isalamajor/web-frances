@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "../stylesheets/MenuDerecha.css";
@@ -8,6 +8,21 @@ import { motion } from "framer-motion";
 
 const MenuDerecha = () => {
   const [openDescription, setOpenDescription] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setOpenDescription(true); // Siempre expandido en móviles
+      } else {
+        setOpenDescription(false); 
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className="menu-derecha">
@@ -24,7 +39,7 @@ const MenuDerecha = () => {
           Daniel González
         </h2>
         
-        {/* Descripción expandible con una transición suave */}
+        {/* Descripción expandible (siempre visible en móviles) */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: openDescription ? 1 : 0, y: openDescription ? 0 : -20 }}

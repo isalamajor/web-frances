@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import "../stylesheets/MaterialMuestra.css";
 import { GoArrowRight } from "react-icons/go";

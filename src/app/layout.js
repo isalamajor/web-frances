@@ -1,9 +1,9 @@
-import { Lexend } from "next/font/google";  // Importar Lexend desde next/font/google
+import { Lexend } from "next/font/google";  
 import "./globals.css";
 
 const lexend = Lexend({
-  variable: "--font-lexend",  // Definir la variable para la fuente Lexend
-  subsets: ["latin"],         // Usar el subconjunto de latín
+  variable: "--font-lexend",
+  subsets: ["latin"],
 });
 
 export const metadata = {
@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${lexend.variable}`}>  {/* Aplicar Lexend */}
+      <body className={`${lexend.variable}`}>
         {children}
       </body>
     </html>

@@ -1,6 +1,6 @@
 .pagina-documento {
     width: 100%;
-    padding: 3rem;
+    padding: 3rem 2em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,4 +9,3 @@
 .contenido-pagina-documento {
     width: 80%;
 }
-

@@ -4,9 +4,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin: 0;
-    padding: 2rem 10%;
-
+    padding-top: 2rem;
 }
 
 .menu-izquierda-all {
@@ -16,20 +16,24 @@
     justify-content: space-between;
 }
 
-
 .menu-link {
     text-decoration: none;
     color: white;
 }
 
-
-
 .logo {
     width: 100%;
     display: flex;
+    flex-direction: row;
+    column-gap: 0;
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
+}
+
+.ref-logo {
+    display: flex;
+    justify-content: center;
 }
 
 .img-logo {
@@ -44,22 +48,36 @@
     z-index: 1;
 }
 
-
 .submenu {
     margin-left: 20px;
     display: flex;
     flex-direction: column;
     gap: 5px;
     overflow: hidden;
-  }
+}
   
-  .menu-link {
+.menu-link {
     display: block;
     padding: 8px 12px;
     cursor: pointer;
-  }
-  
-  .menu-link:hover {
+}
+
+.menu-link:hover {
     color: yellow;
-  }
+}
   
+
+/* 📱 Diseño en móviles */
+@media (max-width: 768px) {
+    .menu-izquierda-all {
+      flex-direction: column; 
+    }
+    .img-logo {
+        width: 50%;
+        height: auto;
+    }
+
+    .menu-izquierda {
+        padding-top: 0;
+    }
+}
