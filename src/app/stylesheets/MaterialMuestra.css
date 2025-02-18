@@ -8,9 +8,11 @@
 
 .recursos-lista {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea */
     gap: 1rem;
     justify-content: left;
+    
+    height: 10rem;
 }
   
   .recurso-item {
@@ -24,6 +26,8 @@
     object-fit: cover;
 
     min-width: 200px; 
+
+    max-height: 100%;
   }
 
   .recurso-item:hover {
@@ -33,7 +37,6 @@
   
   .recurso-imagen {
     max-width: 100%;
-    height: auto;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
   }
@@ -42,8 +45,15 @@
     font-size: 14px;
     color: #333;
     text-decoration: none;
-    padding: 0;
     padding-bottom: 1rem;
   }
   
+  .see-more-container {
+    color: #333;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
  

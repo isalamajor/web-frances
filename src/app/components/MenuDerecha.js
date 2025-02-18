@@ -19,6 +19,7 @@ const MenuDerecha = () => {
         <h2
           onClick={() => setOpenDescription(!openDescription)}
           style={{ cursor: 'pointer' }}
+          className="nombre-profesor"
         >
           Daniel González
         </h2>

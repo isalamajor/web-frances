@@ -35,6 +35,10 @@
     z-index: 1;
 }
 
+.nombre-profesor:hover {
+    color: rgb(255, 252, 158);
+}
+
 .recomendaciones {
     padding: 2rem 3rem;
 

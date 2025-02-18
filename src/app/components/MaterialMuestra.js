@@ -1,5 +1,5 @@
 import Link from "next/link";
-import "../stylesheets/Material.css";
+import "../stylesheets/MaterialMuestra.css";
 import { GoArrowRight } from "react-icons/go";
 
 const Material = ({ label, recursos, carpeta }) => {

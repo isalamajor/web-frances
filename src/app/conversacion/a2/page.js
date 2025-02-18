@@ -21,7 +21,7 @@ export default function Home() {
       <main className={`${styles.main} ${lexend.variable}`}> 
         <MenuIzquierda className={styles.left}></MenuIzquierda>
         <div className={styles.center}>
-          <h1 className={styles.titulo}>Conversation a2</h1>
+          <h1 className={styles.titulo}>Conversation A2</h1>
           <div className={styles.materiales}>
             <Material label="Nuevo" recursos={recursos}/>
           </div>
