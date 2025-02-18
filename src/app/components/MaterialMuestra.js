@@ -3,7 +3,8 @@ import Link from "next/link";
 import "../stylesheets/MaterialMuestra.css";
 import { GoArrowRight } from "react-icons/go";
 
-const Material = ({ label, recursos, carpeta }) => {
+const MaterialMuestra = ({ label, recursos, carpeta }) => {
+  console.log(recursos);
 
   const numRecursos = recursos.length;  
   const recursosLimitados = recursos.slice(0, 3);
@@ -13,9 +14,9 @@ const Material = ({ label, recursos, carpeta }) => {
       <div className="recursos-lista">
         {recursos.length > 3 &&
             recursosLimitados.map((recurso) => (
-            <Link href={"/documento/" + recurso.id}>
-              <div key={recurso.id} className="recurso-item">
-                  <img src={recurso.imagen} alt={recurso.nombre} className="recurso-imagen" />
+            <Link href={`/documento/${encodeURIComponent(recurso.id)}`} key={recurso.id}>
+              <div className="recurso-item">
+                  <img src={"/" + recurso.imagen} alt={recurso.nombre} className="recurso-imagen" />
                   <p className="recurso-nombre">{recurso.nombre}</p>
               </div>
             </Link>
@@ -29,8 +30,8 @@ const Material = ({ label, recursos, carpeta }) => {
         )}
         {numRecursos <= 3 && numRecursos > 0  &&
             recursos.map((recurso) => (
-            <Link href={`/documento/${encodeURIComponent(recurso.id)}`}>
-              <div key={recurso.id} className="recurso-item">
+            <Link href={`/documento/${encodeURIComponent(recurso.id)}`} key={recurso.id}>
+              <div className="recurso-item">
                   <img src={recurso.imagen} alt={recurso.nombre} className="recurso-imagen" />
                   <p className="recurso-nombre">{recurso.nombre}</p>
               </div>
@@ -45,4 +46,4 @@ const Material = ({ label, recursos, carpeta }) => {
   );
 };
 
-export default Material;
+export default MaterialMuestra;

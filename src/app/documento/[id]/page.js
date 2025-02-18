@@ -19,9 +19,6 @@ export default function Home() {
   const { id } = useParams();
   const id_documento = decodeURIComponent(id);
   const documento = lista_documentos.find(documento => documento.id === id);
-  console.log(id);
-  console.log(id_documento);
-  console.log(documento);
 
   return (
     <div className={styles.page}>
