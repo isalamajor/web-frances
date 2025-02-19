@@ -1,48 +1,61 @@
-import fs from 'fs';
 import path from 'path';
+import fs from 'fs';
 
-const folderPath = "public/documentos"
-const listaDocumentos = [];
+export function getStaticProps() {
+  const folderPath = path.join(process.cwd(), 'public', 'documentos');
+  const lista_documentos = [];
 
-// Función para generar el nombre, categoría y descripción
-const generarDatosArchivo = (archivo) => {
-  const [nombre] = archivo.split('.');
-  const partes = nombre.split('_');
-  const categoria = partes[0];
-  const nombreCapitalizado = nombre.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  // Función para generar el nombre, categoría y descripción
+  const generarDatosArchivo = (archivo) => {
+    const [nombre] = archivo.split('.');
+    const partes = nombre.split('_');
+    const categoria = partes[0];
+    const nombreCapitalizado = nombre.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 
-  return {
-    archivo,
-    nombre: nombreCapitalizado,
-    descripcion: `Documento de ${categoria}`,
-    imagen: "archivo.png",
-    categoria,
+    return {
+      archivo,
+      nombre: nombreCapitalizado,
+      descripcion: `Documento de ${categoria}`,
+      imagen: 'archivo.png',
+      categoria,
+    };
   };
-};
 
-// Leer los archivos de la carpeta y generar la lista
-const generarLista = () => {
-  if (!fs.existsSync(folderPath)) {
+  // Verificar si la carpeta existe
+  if (fs.existsSync(folderPath)) {
+    const files = fs.readdirSync(folderPath).filter((file) => file.endsWith('.pdf'));
+    files.forEach((file, index) => {
+      const datosArchivo = generarDatosArchivo(file);
+      lista_documentos.push({
+        id: (index + 1).toString(),
+        ...datosArchivo,
+      });
+    });
+  } else {
     console.error('La carpeta "documentos" no existe.');
-    return;
   }
 
-  const files = fs.readdirSync(folderPath).filter(file => file.endsWith('.pdf'));
-  files.forEach((file, index) => {
-    const datosArchivo = generarDatosArchivo(file);
-    listaDocumentos.push({
-      id: (index + 1).toString(),
-      ...datosArchivo,
-    });
-  });
+  // Devolver la lista como props
+  return {
+    props: {
+      lista_documentos,
+    },
+  };
+}
 
-  // Guardar la lista como JSON
-  const outputPath = path.join(__dirname, 'public', 'listaDocumentos.json');
-  fs.writeFileSync(outputPath, JSON.stringify(listaDocumentos, null, 2));
-  console.log('Lista de documentos generada correctamente.');
-};
-
-generarLista();
-
-
-export default lista_documentos;
+export default function ListaDocumentos({ lista_documentos }) {
+  return (
+    <div>
+      <h1>Lista de Documentos</h1>
+      <ul>
+        {lista_documentos.map((doc) => (
+          <li key={doc.id}>
+            <h3>{doc.nombre}</h3>
+            <p>{doc.descripcion}</p>
+            <p>Categoría: {doc.categoria}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
