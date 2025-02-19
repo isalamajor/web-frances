@@ -35,27 +35,7 @@ export function getStaticProps() {
     console.error('La carpeta "documentos" no existe.');
   }
 
-  // Devolver la lista como props
-  return {
-    props: {
-      lista_documentos,
-    },
-  };
+  
 }
 
-export default function ListaDocumentos({ lista_documentos }) {
-  return (
-    <div>
-      <h1>Lista de Documentos</h1>
-      <ul>
-        {lista_documentos.map((doc) => (
-          <li key={doc.id}>
-            <h3>{doc.nombre}</h3>
-            <p>{doc.descripcion}</p>
-            <p>Categoría: {doc.categoria}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+export default lista_documentos;
