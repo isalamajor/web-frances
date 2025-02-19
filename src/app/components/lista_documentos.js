@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 
-export function getStaticProps() {
+export function generarListaDocumentos() {
   const folderPath = path.join(process.cwd(), 'public', 'documentos');
   const lista_documentos = [];
 
@@ -35,7 +35,9 @@ export function getStaticProps() {
     console.error('La carpeta "documentos" no existe.');
   }
 
-  
+  return lista_documentos;
 }
 
+// Exporta la lista generada para ser usada en otras partes de tu aplicación
+const lista_documentos = generarListaDocumentos();
 export default lista_documentos;
