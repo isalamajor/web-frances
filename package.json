@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next test-fs.js && build",
+    "build": "next src/app/components/test-fs.js/test-fs.js && build",
     "start": "next start",
     "lint": "next lint"
   },
