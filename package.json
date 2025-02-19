@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next lista_documentos.js && build",
+    "build": "next test-fs.js && build",
     "start": "next start",
     "lint": "next lint"
   },

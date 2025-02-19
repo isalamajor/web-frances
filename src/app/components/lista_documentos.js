@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const folderPath = path.join(__dirname, 'public', 'documentos'); // Asegúrate de que la carpeta exista
+const folderPath = path.join('public', 'documentos'); // Asegúrate de que la carpeta exista
 const listaDocumentos = [];
 
 // Función para generar el nombre, categoría y descripción
