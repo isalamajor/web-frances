@@ -5,15 +5,16 @@ import styles from "./page.module.css";
 import MenuIzquierda from "./components/MenuIzquierda";
 import MenuDerecha from "./components/MenuDerecha";
 import MaterialMuestra from "./components/MaterialMuestra";
-import lista_documentos from "./components/lista_documentos";
+//import lista_documentos from "./components/lista_documentos";
 
 const lexend = Lexend({
   variable: "--font-lexend",
   subsets: ["latin"],
 });
 
-export default function Home() {
-
+export default async function Home() {
+  const response = await fetch('http://localhost:3000/api/documentos');
+  const lista_documentos = await response.json();
   const recursos_b1 = lista_documentos.filter(doc => doc.categoria == "conversacion-b1");
   const recursos_a2 = lista_documentos.filter(doc => doc.categoria == "conversacion-a2");
   const recursos_consejos = lista_documentos.filter(doc => doc.categoria == "consejos");
